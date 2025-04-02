@@ -6,6 +6,7 @@ export default function Table({ isOpen }) {
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
   const [position, setPosition] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   async function fetchDataUser() {
     setUsers(await FetchDataUser());
@@ -18,7 +19,6 @@ export default function Table({ isOpen }) {
   async function addData() {
     const payload = { name, lastname, position };
     await AddData(payload);
-    fetchDataUser();
   }
 
   const save = async () => {
@@ -76,7 +76,7 @@ export default function Table({ isOpen }) {
               <td className="td">{user.position}</td>
               {isOpen && (
                 <td className="flex items-center justify-center">
-                  <button onClick={() => remove(user)}>Delete</button>
+                  <button onClick={() => remove(user.id)}>Delete</button>
                 </td>
               )}
             </tr>

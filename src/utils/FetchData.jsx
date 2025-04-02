@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 export async function FetchDataUser() {
   try {
     const response = await axios.get("https://jsd5-mock-backend.onrender.com/members");
+    console.log(response.data);
     return response.data;
   } catch (err) {
     console.error("Failed to fetch data:", err);
@@ -24,7 +25,7 @@ export async function AddData(payload)  {
   }
 };
 
-export async function DeleteData(item)  {
+export async function DeleteData(id)  {
   try {
     const button = await Swal.fire({
       title: "ยืนยันการลบ",
@@ -33,9 +34,10 @@ export async function DeleteData(item)  {
       showCancelButton: true,
       showConfirmButton: true,
     });
+    
     if (button.isConfirmed) {
       await axios.delete(
-        `https://jsd5-mock-backend.onrender.com/members/${item.id}`,
+        `https://jsd5-mock-backend.onrender.com/member/${id}`,
       );
     }
   } catch (e) {
