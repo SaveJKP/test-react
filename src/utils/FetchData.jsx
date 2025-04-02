@@ -1,10 +1,11 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 
-
 export async function FetchDataUser() {
   try {
-    const response = await axios.get("https://jsd5-mock-backend.onrender.com/members");
+    const response = await axios.get(
+      "https://jsd5-mock-backend.onrender.com/members",
+    );
     console.log(response.data);
     return response.data;
   } catch (err) {
@@ -13,7 +14,7 @@ export async function FetchDataUser() {
   }
 }
 
-export async function AddData(payload)  {
+export async function AddData(payload) {
   try {
     await axios.post("https://jsd5-mock-backend.onrender.com/members", payload);
   } catch (e) {
@@ -23,7 +24,7 @@ export async function AddData(payload)  {
       icon: "error",
     });
   }
-};
+}
 
 export async function DeleteData(id) {
   try {
@@ -37,14 +38,7 @@ export async function DeleteData(id) {
     });
 
     if (button.isConfirmed) {
-      await axios.delete(`https://jsd5-mock-backend.onrender.com/members/${id}`);
-      Swal.fire({
-        title: "ลบสําเร็จ",
-        text: "ข้อมูลถูกลบเรียบร้อยแล้ว",
-        icon: "success",
-      }
-
-      );
+      await axios.delete(`https://jsd5-mock-backend.onrender.com/member/${id}`);
     }
   } catch (e) {
     Swal.fire({
