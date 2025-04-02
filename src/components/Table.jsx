@@ -1,4 +1,4 @@
-import { DeleteData, FetchDataUser, AddData } from  "../utils/fetchData";
+import { DeleteData, FetchDataUser, AddData } from  "../utils/API";
 import { useState, useEffect } from "react";
 
 export default function Table({ isOpen }) {
@@ -74,8 +74,8 @@ export default function Table({ isOpen }) {
               <td className="td">{user.lastname}</td>
               <td className="td">{user.position}</td>
               {isOpen && (
-                <td className="flex items-center justify-center">
-                  <button onClick={() => remove(user.id)}>Delete</button>
+                <td className="flex items-center justify-center ">
+                  <button className = "py-1 bg-red-600" onClick={() => remove(user.id)}>Delete</button>
                 </td>
               )}
             </tr>
