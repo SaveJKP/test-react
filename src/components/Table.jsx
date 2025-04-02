@@ -1,4 +1,4 @@
-import { DeleteData, FetchDataUser, AddData } from "../utils/fetchData";
+import { DeleteData, FetchDataUser, AddData } from  "../utils/fetchData";
 import { useState, useEffect } from "react";
 
 export default function Table({ isOpen }) {
@@ -6,7 +6,6 @@ export default function Table({ isOpen }) {
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
   const [position, setPosition] = useState("");
-  const [submitted, setSubmitted] = useState(false);
 
   async function fetchDataUser() {
     setUsers(await FetchDataUser());

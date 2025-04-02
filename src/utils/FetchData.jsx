@@ -25,19 +25,25 @@ export async function AddData(payload)  {
   }
 };
 
-export async function DeleteData(id)  {
+export async function DeleteData(id) {
   try {
     const button = await Swal.fire({
       title: "ยืนยันการลบ",
       text: "คุณต้องการลบใช่หรือไม่",
-      icon: "question",
+      icon: "warning",
       showCancelButton: true,
-      showConfirmButton: true,
+      confirmButtonText: "ใช่, ลบเลย",
+      cancelButtonText: "ยกเลิก",
     });
-    
+
     if (button.isConfirmed) {
-      await axios.delete(
-        `https://jsd5-mock-backend.onrender.com/member/${id}`,
+      await axios.delete(`https://jsd5-mock-backend.onrender.com/members/${id}`);
+      Swal.fire({
+        title: "ลบสําเร็จ",
+        text: "ข้อมูลถูกลบเรียบร้อยแล้ว",
+        icon: "success",
+      }
+
       );
     }
   } catch (e) {
