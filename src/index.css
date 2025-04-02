@@ -1,0 +1,61 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  /* //build-in utility theme
+  --color-*: intitial;
+  --font-*: intitial;
+  --text-*: intitial;
+  --font-weight-*: intitial;
+  --tracking-*: intitial;
+  --leading-*: intitial;
+  --breakpoint-*: intitial;
+  --container-*: intitial;
+  --spacing-*: intitial;
+  --radius-*: intitial;
+  --shadow-*: intitial;
+  --inset-shadow-*: intitial;
+  --drop-shadow-*: intitial;
+  --blur-*: intitial;
+  --perspective-*: intitial;
+  --aspect-*: intitial;
+  --ease-*: intitial;
+  --animate-*: intitial; */
+  --breakpoint-sm: 320px;
+  --breakpoint-md: 728px;
+  --breakpoint-lg: 1440px;
+
+  /* custome theme */
+  --widht-min: 474px;
+  --widht-max: 1000px;
+  --color-primary: #e7e8e7;
+  --color-secondary: #ffff;
+  --color-text: #000;
+  --color-thirtiary: red;
+}
+
+@layer base {
+  button {
+    @apply bg-(--color-secondary) text-(--color-text) rounded-md p-4 shadow-2xl;
+  }
+  body{
+    @apply bg-(--color-primary) text-(--color-text) font-sans;
+  }
+  input{
+    @apply bg-(--color-secondary) text-(--color-text) rounded-md p-4 py-2 shadow-2xl;}
+}
+@layer components {
+  .container__div {
+    @apply mx-auto w-full max-w-(--widht-max) min-w-(--widht-min);
+  }
+  .header__h1 {
+    @apply flex items-center justify-between bg-(--color-primary) text-5xl text-(--color-text) font-bold;
+  }
+  
+}
+
+* {
+  @apply outline-1 outline-red-500;
+}
