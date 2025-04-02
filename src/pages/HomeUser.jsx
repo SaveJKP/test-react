@@ -7,7 +7,7 @@ export default function HomeUser() {
       <section className="container__div flex flex-col items-center justify-center space-y-4">
         <Header header="Home - User Sector" />
       
-        <Table />
+        <Table isOpen={false} />
       </section>
     </>
   );

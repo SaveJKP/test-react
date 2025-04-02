@@ -12,8 +12,9 @@
     "@tailwindcss/vite": "^4.0.14",
     "axios": "^1.8.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.1.0-canary-4632e36a-20250216",
     "react-router-dom": "^7.4.1",
+    "sweetalert2": "^11.17.2",
     "tailwindcss": "^4.0.14"
   },
   "devDependencies": {
